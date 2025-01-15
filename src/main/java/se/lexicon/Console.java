@@ -1,18 +1,33 @@
 package se.lexicon;
 
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Console {
 
-    private static Scanner scanner = new Scanner(System.in).useLocale(Locale.US); //Uses (.) instead of (,)
+    private final static Scanner scanner = new Scanner(System.in).useLocale(Locale.US); //Uses (.) instead of (,)
 
     public static double readAmount(){
-        return scanner.nextDouble();
+        while(true){
+            try{
+                return scanner.nextDouble();
+            } catch (InputMismatchException e){
+                System.out.println("Invalid input. Please try again: ");
+                scanner.next();
+            }
+        }
     }
 
     public static int readOption(){
-        return scanner.nextInt();
+        while(true){
+            try{
+                return scanner.nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("Invalid input. Please try again: ");
+                scanner.next();
+            }
+        }
     }
 
 

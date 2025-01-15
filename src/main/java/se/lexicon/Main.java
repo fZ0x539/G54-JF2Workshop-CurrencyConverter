@@ -9,11 +9,8 @@ public class Main {
         var sekToEURO = new ConversionFactor(0.087d, "Euro", "SEK");
         var euroToSEK = new ConversionFactor(11.50d, "SEK", "Euro");
 
-
-
         while(isRunning){
         printOptions();
-
             switch(Console.readOption()){
                 case 0:
                     isRunning = false;
@@ -32,12 +29,8 @@ public class Main {
                     CurrencyConverter.convertCurrency(euroToSEK);
                     continue;
                 default:
-                    System.out.println("Try again..");
-
+                    System.out.println("No such option. Try again..");
             }
-            /*System.out.println("Do you wish to continue Y/n?");*/
-
-
         }
     }
 
