@@ -6,17 +6,20 @@ import java.util.Scanner;
 
 public class Console {
 
-    private final static Scanner scanner = new Scanner(System.in).useLocale(Locale.US); //Uses (.) instead of (,)
+    private final static Scanner scanner = new Scanner(System.in).useLocale(Locale.US); //Uses (.) instead of (,) for decimals
 
     public static double readAmount(){
         while(true){
             try{
-                if(scanner.nextDouble() <= 0)
+                double amount = scanner.nextDouble();
+                if(amount <= 0){
                     System.out.println("Negative numbers not allowed. Try again: ");
-                return scanner.nextDouble();
+                }
+                else
+                    return amount;
             } catch (InputMismatchException e){
                 System.out.println("Invalid input. Please try again: ");
-                scanner.next();
+                scanner.nextLine();
             }
         }
     }
