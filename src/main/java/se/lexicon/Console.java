@@ -11,6 +11,8 @@ public class Console {
     public static double readAmount(){
         while(true){
             try{
+                if(scanner.nextDouble() <= 0)
+                    System.out.println("Negative numbers not allowed. Try again: ");
                 return scanner.nextDouble();
             } catch (InputMismatchException e){
                 System.out.println("Invalid input. Please try again: ");
